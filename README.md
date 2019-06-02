@@ -17,5 +17,5 @@ and fill in form for making use of the /admin site present in django.
 
 ```python3 manage.py runserver```
 
-Now open your browser and go to ```https://127.0.0.1:8000```
+Now open your browser and go to ```http://127.0.0.1:8000```
 This webapplication is still in development stage feel free to make modifications.
