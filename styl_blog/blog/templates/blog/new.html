@@ -2,21 +2,33 @@
 <html lang="en" dir="ltr">
   <head>
     <title>Add Your Blog</title>
+    <script>
+      function validation(){
+        const head = document.querySelector('#head').value;
+        const cont = document.querySelector('#content').value;
+        if( head = null ){
+          alert("There is not enough content provided!")
+          window.history.back();
+          return false;
+          }
+          return true;
+        }
+  </script>
   </head>
   <body>
     <h3 style="color:blue;">Add your content</h3>
-    <h4 style="color:red;">please make sure that you are not leaving any fields empty.</h4>
-    <form action="{% url 'add' %}" method="post">
+    <h4 style="color:red;">please make sure that you do not leave empty fields.</h4>
+
+    <form onsubmit="return validation();" action="{% url 'add' %}" method="post">
       {% csrf_token %}
-      <input type="text" name="heading" placeholder="enter your heading.">
+      <input id="head" type="text" name="heading" placeholder="enter your heading.">
       <br>
-      <input type="text" name="content" placeholder="How was it today." size="100px">
-      <br />
+      <input id="content" type="text" name="content" placeholder="How was it today." size="100px">
       <table>
         <th><input type="submit" value="submit"></th>
         <th><button><a href="{% url 'index' %}">Cancel</a></button></th>
       </table>
-</form>
-
+    </form>
+<p id="error"></p>
   </body>
 </html>
