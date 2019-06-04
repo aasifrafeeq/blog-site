@@ -3,11 +3,24 @@
   <head>
     <title>styl_blog</title>
   </head>
+  <style>
+      h1{
+          text-align:center;
+          color:blue;
+      }
+      button{
+          color:green;
+      }
+  </style>
   <body>
     <h1>The Styl Way!</h1>
+    <hr />
+    <table>
+        <th><button><a href="{% url 'newblog' %}">Add a new blog.</a></button></th>
+        <th><button><a href="{% url 'dashboard' %}">Dashboard</a></button></th>
+        <th><button><a href="/admin">admin</a></button></th>
+    </table>
     <h5>what ever you say stays here !</h5>
-    <a href="{% url 'newblog' %}">Add a new blog.</a>
-    <br>
-    <a href="{% url 'dashboard' %}">Dashboard</a>
+
   </body>
 </html>

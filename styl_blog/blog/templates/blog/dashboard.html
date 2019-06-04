@@ -3,6 +3,19 @@
   <head>
     <title>Dashboard</title>
   </head>
+  <style>
+      h1{
+          text-align:center;
+          color:blue;
+      }
+      button{
+          color:green;
+      }
+  </style>
+  <body>
+    <h1>The Styl Way!</h1>
+    <hr />
+
   <body>
     <ul>
       {% for name in head %}
@@ -11,5 +24,6 @@
         </li>
       {% endfor %}
     </ul>
+    <button><a href="{% url 'index' %}">Go Back</a></button>
   </body>
 </html>

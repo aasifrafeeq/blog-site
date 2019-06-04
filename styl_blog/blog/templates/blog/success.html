@@ -6,6 +6,10 @@
   <body>
     <h4>Blog added succesfully.</h4>
     <br>
-    <a href="{% url 'index' %}">Go to Homepage.</a>
-  </body>
+    <table>
+        <th><button><a href="{% url 'newblog' %}">Add a new blog.</a></button></th>
+        <th><button><a href="{% url 'dashboard' %}">Dashboard</a></button></th>
+        <th><button><a href="{% url 'index' %}">Home</a></button></th>
+    </table>
+    </body>
 </html>

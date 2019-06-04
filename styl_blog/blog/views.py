@@ -31,6 +31,9 @@ def add(request):
     cont = request.POST["content"]
     if head or cont == None:
         render(request,'blog/error.html',{'message':"The fields must not be empty."})
+    for h in Blog.objects.all():
+        while head == h.heading :
+            head += '*'
     new = Blog(heading = head, content=cont)
     new.save()
     return render(request,'blog/success.html')
